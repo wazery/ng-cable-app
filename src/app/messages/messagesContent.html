@@ -1,0 +1,26 @@
+<section class="messages">
+  <ul style="display: none;">
+   <li>There are no channels.</li>
+  </ul>
+
+  <ul>
+    <li class="roomlabel ng-scope" ng-repeat="channel in channels">
+       <a class="btn btn-info ng-binding label-default label-info" href="" ng-class="{'label-default': user != data.username, 'label-info': (channel != selectedChannel), 'label-warning':(channel == selectedChannel)}" ng-click="subscribe(channel)">
+       <i class="fa fa-comments" ng-class="{'fa-spin':(channel == selectedChannel), 'fa-spinner':(channel == selectedChannel), 'fa-comments':(channel != selectedChannel)}"></i>
+       124
+       </a>
+    </li>
+  </ul>
+
+  <h5>
+    <div>Hey <span class="username">{{ selected.name }}</span>, welcome! Click to select a channel below (
+      <a href="#" ng-click="$event.preventDefault(); logout()">log out</a>
+    )
+    </div>
+  </h5>
+
+  <button ng-repeat="message in messages" class="btn rounded"
+    ng-click="fire(message)" ng-class="{ 'btn-1': $even, 'btn-2': $odd }">
+    {{message.title}}
+  </button>
+</section>

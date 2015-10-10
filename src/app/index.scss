@@ -1,0 +1,312 @@
+/**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/_variables.scss
+ */
+$navbar-inverse-link-color: #5AADBB;
+$icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+/**
+ *  Do not remove this comments bellow. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.thumbnail {
+  height: 200px;
+
+  img.pull-right {
+    width: 50px;
+  }
+}
+
+.modal {
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+    .modal:before {
+      display: inline-block;
+      vertical-align: middle;
+      content: " ";
+      height: 100%;
+    }
+}
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.login {
+  float: right;
+}
+
+input:focus{
+    outline: 0 none !important;
+}
+
+.header {
+  padding: 0.9em;
+  h2 { color: #8E8D8E; }
+  p { color: #9C9C9C; }
+}
+
+.messages {
+  background-color: #f0faf8;
+  text-align: center;
+  // color: white;
+  padding: 0.9em;
+}
+
+.fa-github {
+  color: white;
+  font-size: 32pt;
+}
+
+.footer {
+  color: white;
+  font-size: 20pt;
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: -3em;
+}
+.chat-section {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  color: white;
+  background: -webkit-linear-gradient(90deg, #232526 10%, #414345 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #232526 10%, #414345 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #232526 10%, #414345 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #232526 10%, #414345 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #232526 10%, #414345 90%); /* W3C */
+}
+
+.chatbox {
+  overflow:auto;
+}
+
+.marker {
+  font-size: 12pt;
+  font-weight: 400;
+}
+
+.userlabel {
+  margin-bottom: 5px;
+}
+
+.well {
+  height: 38em;
+  margin-top: 5px;
+  background-color: rgba(245, 245, 245, 0.02);
+}
+
+.ngchat .bubble-container {
+  display: block;
+  clear: both;
+  position: relative;
+  margin-bottom: 10px;
+  min-height: 53px;
+}
+
+.avatar {
+  img {
+    border: 2px solid #fff;
+    box-sizing: initial;
+    box-shadow: 0 1px 3px rgba(0,0,0,.15);
+    border-radius: 40px;
+    width: 50px;
+    height: 50px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+  }
+}
+
+.avatar-right {
+  float: right;
+  width: 50px;
+}
+
+ .avatar-left {
+  float: left;
+  width: 50px;
+}
+
+ .avatar-right:before {
+  content: '';
+  border-style: solid;
+  border-width: 10px 0 10px 14px;
+  border-color: transparent #404040;
+  display: block;
+  width: 0;
+  z-index: 1;
+  right: 24px;
+  top: 13px;
+  position: relative;
+}
+
+.avatar-left:before {
+  content: '';
+  border-style: solid;
+  border-width: 10px 14px 10px 0;
+  border-color: transparent #434444;
+  display: block;
+  width: 0;
+  z-index: 1;
+  left: 61px;
+  top: 13px;
+  position: relative;
+}
+
+.bubble {
+  padding: 13px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background: #434444;
+  color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,.15);
+}
+
+.bubble-left {
+  overflow: hidden;
+  margin-left: 75px;
+}
+
+.bubble-right {
+  overflow: hidden;
+  margin-right: 75px;
+}
+
+.rounded {
+  border-radius: 20px !important;
+}
+
+.btn-1 {
+  color: white;
+  background-color: #1ABC9C;
+  border-color: #1ABC9C;
+  margin-right: 5px;
+  &:hover {
+    background-color: #1ACEAA;
+    color: white;
+  }
+  &:focus {
+    background-color: #1ACEAA;
+    color: white;
+  }
+}
+
+.btn-2 {
+  color: white;
+  background-color: #1AADBC;
+  border-color: #1AADBC;
+  margin-right: 5px;
+  &:hover {
+    background-color: #1EC1D2;
+    color: white;
+  }
+  &:focus {
+    background-color: #1EC1D2;
+    color: white;
+  }
+}
+
+.btn-3 {
+  background-color: #5CB4B8;
+  border-color: #5CB4B8;
+  &:hover {
+    background-color: #70D9DE;
+    color: white;
+  }
+  &:focus {
+    background-color: #70D9DE;
+    color: white;
+  }
+}
+
+.btn-4 {
+  color: white;
+  background-color: #444444 !important;
+    &:hover {
+    background-color: #444444;
+    color: white;
+  }
+  &:focus {
+    background-color: #444444;
+    color: white;
+  }
+}
+
+
+.btn:focus {
+  outline: none;
+}
+
+.username {
+  font-weight: 800;
+}
+
+.form-control {
+  border: 2px solid white;
+  //color: #34495e;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  padding: 8px 12px;
+  height: 42px;
+  -webkit-appearance: none;
+  border-radius: 6px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: border .25s linear, color .25s linear, background-color .25s linear;
+  transition: border .25s linear, color .25s linear, background-color .25s linear;
+}
+
+.comment-date {
+  color: #CDEEFF;
+  position: relative;
+  float: right;
+  top: 4px;
+}
+
+.center-modal {
+  background-color: white;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  right: 25%;
+  padding: 4%;
+  font-size: 14pt;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.hint-button {
+  background-color: #5cb85c;
+  color: white;
+  padding: 15px;
+  border-radius: 58px;
+}
+
+.no-comments {
+  position: absolute;
+  bottom: 50%;
+  left: 28%;
+  font-size: 15pt;
+}
+
+/**
+ *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector

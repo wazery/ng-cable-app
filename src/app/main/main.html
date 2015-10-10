@@ -1,0 +1,59 @@
+<div ng-controller="ModalsController">
+
+  <section class="header">
+
+    <button type="button" class="login btn btn-3" ng-show="isLive && !isUserLoggedIn" ng-click="login()">Log In</button>
+    <button type="button" class="login btn btn-3" ng-show="isLive && isUserLoggedIn" ng-click="logout()">Log Out</button>
+
+    <h2>Example Application for the <em>ng-cable</em> NPM package</h2>
+
+    <p>
+     <span ng-show="isLive" class="label label-success">We're Live!</span>
+     <span ng-show="!isLive" class="label label-danger">
+       <i class="fa fa-spin fa-spinner"></i> Connection Lost, reconecting!</span>
+
+     Channels are listed across the screen. To send a chat message,
+     enter a message in the box and click the 'Send' button.
+    </p>
+
+  </section>
+
+  <div ng-view ng-include src="'app/messages/messagesContent.html'"
+       ng-show="isUserLoggedIn" ng-show="messages" ng-controller="MessagesController"></div>
+
+  <section class="chat-section">
+
+    <div class="container">
+      <div class="dialog dialog-success"></div>
+
+      <div ng-switch on="isLive && isUserLoggedIn">
+
+        <div class="row" ng-switch-when="true">
+          <br>
+
+          <div class="col-md-2">
+            <div ng-view ng-include src="'app/online_users/onlineUsersContent.html'"></div>
+          </div>
+
+          <div class="col-md-10">
+            <div ng-view ng-include src="'app/comments/chatHistoryContent.html'"
+                 ng-controller="CommentsController"></div>
+
+            <div ng-view ng-include src="'app/comments/chatFormContent.html'"
+                 ng-controller="ChatFormController"></div>
+          </div>
+
+        </div>
+
+        <div class="row center-modal" ng-switch-when="false">
+          <br>
+
+          <div class="hint-button">Please login first, or check the connection!</div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</div>
