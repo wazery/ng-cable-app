@@ -5,23 +5,26 @@
     .module('exampleCableApp')
     .controller('MessagesController', MessagesController);
 
-  function MessagesController($rootScope, $scope, $http, $log, toaster, $cable) {
-    $http.get('http://0.0.0.0:5000/messages.json')
-      .success(function (data) {
-        $scope.messages = data; // response data
-    })
-      .error(function (data) {
-        $log.info(data);
+  function MessagesController($scope, $http, $log, toaster, $cable) {
+
+    $scope.$on('getMessagesFor', function(event, room) {
+
+      $http.get('http://0.0.0.0:5000/rooms/' + String(room.id) + '.json')
+        .then(function (data) {
+          $scope.messages = data.data; // response data
+
+          toaster.pop('success', 'Entered the room', 'Successfully logged into ' + String(room.title));
+      });
     });
 
-    $scope.fire = function(message) {
-      $rootScope.$broadcast('getCommentsFor', message);
-      $rootScope.currentMessage = message;
-    };
-    var messagesCable = $cable('http://0.tcp.ngrok.io:52176');
-    messagesCable.cable.createSubscription('messagesChannel', function(newMessage){
-      $scope.messages.unshift(newMessage);
-    });
-  }
+    var cable = $cable('ws://0.0.0.0:28080');
+    var channel = cable.subscribe('RoomsChannel', { received: function(newMessage){
+      $log.info(newMessage);
+      toaster.pop('success', 'New message', newMessage.body);
+      $scope.messages.push(newMessage);
+    }});
+
+  };
 
 })();
+

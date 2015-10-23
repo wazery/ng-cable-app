@@ -10,7 +10,8 @@
     <p>
      <span ng-show="isLive" class="label label-success">We're Live!</span>
      <span ng-show="!isLive" class="label label-danger">
-       <i class="fa fa-spin fa-spinner"></i> Connection Lost, reconecting!</span>
+       <i class="fa fa-spin fa-spinner"></i> Connection Lost, reconecting!
+     </span>
 
      Channels are listed across the screen. To send a chat message,
      enter a message in the box and click the 'Send' button.
@@ -18,8 +19,8 @@
 
   </section>
 
-  <div ng-view ng-include src="'app/messages/messagesContent.html'"
-       ng-show="isUserLoggedIn" ng-show="messages" ng-controller="MessagesController"></div>
+  <div ng-view ng-include src="'app/rooms/roomsContent.html'"
+       ng-show="isUserLoggedIn" ng-show="rooms" ng-controller="RoomsController"></div>
 
   <section class="chat-section">
 
@@ -36,10 +37,10 @@
           </div>
 
           <div class="col-md-10">
-            <div ng-view ng-include src="'app/comments/chatHistoryContent.html'"
-                 ng-controller="CommentsController"></div>
+            <div ng-view ng-include src="'app/messages/chatHistoryContent.html'"
+                 ng-controller="MessagesController"></div>
 
-            <div ng-view ng-include src="'app/comments/chatFormContent.html'"
+            <div ng-view ng-include src="'app/messages/chatFormContent.html'"
                  ng-controller="ChatFormController"></div>
           </div>
 

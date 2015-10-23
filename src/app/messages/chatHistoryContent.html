@@ -2,16 +2,16 @@
 
   <div class="well chatbox">
      <ul>
-        <div ng-show="!comments" class="no-comments">Please select a message to display its comments</div>
+        <div ng-show="!messages" class="no-messages">Please select a room to display its messages</div>
 
-        <div class="bubble-container" ng-repeat="comment in comments">
+        <div class="bubble-container" ng-repeat="message in messages">
 
           <div class="avatar" ng-class="$even ? 'avatar-right' : 'avatar-left'">
             <img src="https://avatars3.githubusercontent.com/u/470401?v=3&s=460">
           </div>
 
-          <div class="bubble" ng-class="$even ? 'bubble-right' : 'bubble-left'">{{comment.content}}
-            <span class="comment-date">{{comment.created_at}}</span>
+          <div class="bubble" ng-class="$even ? 'bubble-right' : 'bubble-left'">{{message.content}}
+            <span class="comment-date">{{message.created_at}}</span>
           </div>
 
           <br><br>

@@ -7,12 +7,15 @@
 
   function ChatFormController($rootScope, $scope, $http, $log, toaster, $cookieStore) {
 
-    $scope.submit = function() {
+    $scope.submit = function(data) {
 
-      $http.post('http://0.0.0:5000/messages/' + String($rootScope.currentMessage.id) + '/comments',
-        {"message_id": String($rootScope.currentMessage.id),
-         "current_user": String($cookieStore.get('loggedUser').id),
-         "comment": {"content": $scope.content}
+      var room_id = String($rootScope.currentRoom.id);
+
+      $http.post('http://0.0.0:5000/rooms/' + room_id + '/messages',
+        {
+          "room_id": room_id,
+          "current_user": String($cookieStore.get('loggedUser').id),
+          "message": {"content": data}
         })
         .then(function (data) {
           $log.info('in chat form controller');
