@@ -37,11 +37,9 @@
           </div>
 
           <div class="col-md-10">
-            <div ng-view ng-include src="'app/messages/chatHistoryContent.html'"
-                 ng-controller="MessagesController"></div>
-
-            <div ng-view ng-include src="'app/messages/chatFormContent.html'"
-                 ng-controller="ChatFormController"></div>
+            <div ng-view ng-include src="'app/messages/messagesContent.html'"
+                 ng-controller="MessagesController">
+            </div>
           </div>
 
         </div>

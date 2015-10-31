@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular
+  var actionCableExampleApp = angular
     .module('exampleCableApp', ['ngAnimate',
                             'ngCookies',
                             'ngTouch',
@@ -10,6 +10,11 @@
                             'ui.router',
                             'ui.bootstrap',
                             'toaster',
-                            'ng-cable']);
+                            'ngCable']);
+
+  actionCableExampleApp.config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+  }]);
 
 })();

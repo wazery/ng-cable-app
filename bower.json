@@ -18,7 +18,6 @@
     "font-awesome": "fontawesome#~4.4.0",
     "angular-bootstrap": "~0.14.0",
     "AngularJS-Toaster": "~0.4.15",
-    "ng-cable": "*",
     "ngCable": "*"
   },
   "devDependencies": {
